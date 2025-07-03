@@ -1,0 +1,130 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    width: 100%;
+}
+
+.display {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px;
+    text-align: right;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: rgb(225, 216, 216);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+    background: rgba(255, 107, 107, 0.7);
+}
+
+.operator:hover {
+    background: rgba(255, 107, 107, 0.9);
+}
+
+.equals {
+    background: rgba(72, 187, 120, 0.7);
+}
+
+.equals:hover {
+    background: rgba(72, 187, 120, 0.9);
+}
+
+.clear {
+    background: rgba(237, 137, 54, 0.7);
+}
+
+.clear:hover {
+    background: rgba(237, 137, 54, 0.9);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+    }
+    
+    .display {
+        font-size: 2rem;
+        padding: 15px;
+    }
+    
+    button {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+}
+
+/* Animation for button press */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.button-pressed {
+    animation: buttonPress 0.1s ease;
+}
